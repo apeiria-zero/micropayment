@@ -1,0 +1,15 @@
+<h1>Bitcoin</h1>
+
+<h1><%= "残高: #{@amount}BTC" %></h1>
+
+<br>
+
+<%= form_with url: bitcoin_path do |f| %>
+   <%= f.label :アドレス %>
+   <%= f.text_field :to_address, class: 'form-control' %>
+   <%= f.label :送金額 %>
+   <%= f.number_field :amount, step: "0.01",class: 'form-control' %>
+   <%= f.submit '送金', class: 'btn btn-primary' %>
+<% end %>
+
+<%= flash[:notice] %>
